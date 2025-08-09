@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شريكك التقني المعتمد في الغردقة</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Global Styles --- */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff8c00;
+            --text-color: #333;
+            --light-text-color: #ffffff;
+            --card-bg-color: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Tajawal", "Segoe UI", "Cairo", "Dubai", sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            position: relative;
+        }
+        
+        /* --- General Section Styling --- */
+        .section-container { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: 36px; color: var(--primary-color); margin-bottom: 15px; font-weight: 700; }
+        .section-subtitle { font-size: 18px; color: #666; max-width: 700px; margin: 0 auto 50px auto; line-height: 1.6; }
+
+        /* --- Header & Navigation Bar --- */
+        header {
+            position: sticky; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 5%;
+            box-sizing: border-box; background-color: transparent; transition: background-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(5px); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        
+        .logo { 
+            height: 50px;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links { list-style: none; margin: 0; padding: 0; display: flex; }
+        .nav-links li { margin-right: 25px; }
+        .nav-links a { text-decoration: none; color: var(--light-text-color); font-weight: 500; transition: color 0.3s ease; }
+        header.scrolled .nav-links a { color: var(--primary-color); }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 0; }
+        .hamburger .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--light-text-color); transition: all 0.3s ease-in-out; }
+        header.scrolled .hamburger .bar { background-color: var(--primary-color); }
+
+        /* --- Hero Section --- */
+        #hero {
+            display: flex; align-items: center; justify-content: center; text-align: center; height: 100vh;
+            color: var(--light-text-color);
+            background: linear-gradient(rgba(0, 20, 50, 0.65), rgba(0, 20, 50, 0.65)), url('https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg');
+            background-size: cover; background-position: center; padding: 0 5%; box-sizing: border-box;
+        }
+        .hero-content { max-width: 800px; width:100%; }
+        
+        .hero-content h1 { font-size: 18px; font-weight: 700; line-height: 1.8; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); margin-bottom: 25px; height: 120px; }
+        .line { display: block; direction: rtl; overflow: hidden; white-space: nowrap; width: 0; margin: 0 auto; }
+        .line1 { animation: typing 1.8s steps(21) forwards; }
+        .line2 { animation: typing 1.5s steps(16) forwards; animation-delay: 1.9s; }
+        .line3 { animation: typing 2.2s steps(22) forwards; animation-delay: 3.5s; }
+        .line4 { border-left: 3px solid var(--accent-color); animation: typing 2s steps(17) forwards, blink .75s step-end infinite; animation-delay: 5.8s, 7.8s; }
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink { from, to { border-color: transparent; } 50% { border-color: var(--accent-color); } }
+
+        .hero-content p { font-size: 18px; margin-bottom: 30px; font-weight: 300; line-height: 1.6; }
+        .cta-button { display: inline-block; background-color: var(--accent-color); color: var(--light-text-color); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-size: 18px; font-weight: bold; transition: transform 0.3s ease, background-color 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .cta-button:hover { transform: scale(1.05); background-color: #ff9d2d; }
+        
+        /* --- Services Section --- */
+        #services { background-color: var(--secondary-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background-color: var(--card-bg-color); padding: 40px 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .service-card .icon { margin-bottom: 20px; height: 70px; display: flex; align-items: center; justify-content: center; }
+        .service-card .icon img { height: 65px; width: auto; }
+        .service-card h3 { font-size: 22px; margin-bottom: 15px; color: var(--text-color); }
+        .service-card p { font-size: 16px; line-height: 1.7; color: #555; }
+        
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-fab { position: fixed; bottom: 25px; left: 25px; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000; transition: transform 0.3s ease; }
+        .whatsapp-fab:hover { transform: scale(1.1); }
+        .whatsapp-fab svg { width: 32px; height: 32px; fill: white; }
+
+        /* --- Contact Section --- */
+        #contact { background-color: #fff; }
+        .contact-wrapper { display: flex; justify-content: center; align-items: center; text-align: right; }
+        .contact-info { max-width: 450px; width: 100%; }
+        .contact-info h3 { font-size: 24px; color: var(--text-color); margin-bottom: 25px; text-align: center; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; background-color: var(--secondary-color); padding: 15px; border-radius: 8px; }
+        .info-item i { color: var(--primary-color); font-size: 22px; width: 30px; }
+        .info-item p { margin: 0; font-size: 16px; font-weight: 500; }
+        .info-item p a { text-decoration: none; color: var(--text-color); transition: color 0.3s ease; }
+        .info-item p a:hover { color: var(--accent-color); }
+        
+        /* --- Hamburger Menu CSS --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 70px; right: 0; background-color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .nav-links li { text-align: center; margin: 0; padding: 15px 0; border-bottom: 1px solid #eee; }
+            .nav-links a { color: var(--primary-color) !important; }
+            .hamburger { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <nav>
+            <a href="#hero" class="logo">
+                <img src="https://i.postimg.cc/XJjK5WBD/20250809-010756-0000.png" alt="شعار الشركة">
+            </a>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger-button">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+             <div class="hero-content">
+                <h1>
+                    <span class="line line1">شريكك التقني المعتمد</span>
+                    <span class="line line2">في مدينة الغردقة</span>
+                    <span class="line line3">لجميع خدمات الكمبيوتر</span>
+                    <span class="line line4">وأنظمة المراقبة</span>
+                </h1>
+                <p>حلول تكنولوجية متكاملة لأعمالك: من الأنظمة الأمنية والشبكات إلى الدعم الفني ونقاط البيع.</p>
+                <a href="#contact" class="cta-button">اطلب معاينة مجانية</a>
+            </div>
+        </section>
+
+        <section id="services" class="section-container">
+            <h2 class="section-title">خدماتنا الاحترافية</h2>
+            <p class="section-subtitle">نقدم مجموعة متكاملة من الحلول التقنية المصممة خصيصاً لتلبية احتياجات أعمالك في الغردقة.</p>
+            <div class="services-grid">
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/gcRGwYjc/20250808-232224-0000.png" alt="أيقونة الأنظمة الأمنية"></div><h3>الأنظمة الأمنية</h3><p>تركيب وصيانة كاميرات المراقبة، أنظمة الإنتركوم، وكل ما يتعلق بالكهرباء الخفيفة لضمان أمان منشأتك.</p></div>
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/B6YxWTWp/20250808-230818-0000.png" alt="أيقونة الدعم الفني والصيانة"></div><h3>الدعم الفني والصيانة</h3><p>صيانة شاملة لأجهزة الكمبيوتر المكتبية والمحمولة وملحقاتها، مع حلول سريعة لجميع المشاكل التقنية.</p></div>
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/FHSy8kH5/20250808-232605-0000.png" alt="أيقونة حلول الشبكات"></div><h3>حلول الشبكات</h3><p>تأسيس وتجهيز شبكات الإنترنت والشبكات الداخلية (LAN) بسرعات عالية وتغطية ممتازة لضمان اتصال دائم.</p></div>
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/C1rJSTyW/20250808-233414-0000.png" alt="أيقونة أنظمة نقاط البيع"></div><h3>أنظمة نقاط البيع (POS)</h3><p>توريد وتركيب أنظمة البيع والمستودعات المتكاملة للسوبرماركت ومحلات التجزئة، مع تدريب كامل على الاستخدام.</p></div>
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/mkxjt3Dw/20250808-233611-0000.png" alt="أيقونة الأنظمة الصوتية"></div><h3>الأنظمة الصوتية</h3><p>تصميم وتركيب أنظمة الصوت المركزية والمكبرات الصوتية للإعلانات الداخلية والموسيقى الخلفية.</p></div>
+                <div class="service-card"><div class="icon"><img src="https://i.postimg.cc/VvVYqNxD/20250808-234210-0000.png" alt="أيقونة الخدمات الرقمية"></div><h3>الخدمات الرقمية</h3><p>تصميم وتطوير مواقع الويب الحديثة والصفحات التعريفية التي تعكس هوية عملك بشكل احترافي.</p></div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section-container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="section-subtitle">نحن هنا لخدمتك. يمكنك التواصل مباشرة عبر المعلومات التالية.</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>الغردقة، محافظة البحر الأحمر، مصر</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p><a href="tel:+201113033363" dir="ltr">+20 111 303 3363</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:ghazirefat@gmail.com">ghazirefat@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>السبت - الخميس: 9:00 صباحاً - 7:00 مساءً</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <a href="https://wa.me/201113033363" class="whatsapp-fab" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM12.04 20.15h-.01c-1.53 0-3.03-.4-4.36-1.15l-.31-.18-3.24.85.87-3.18-.2-.33c-.83-1.38-1.27-2.98-1.27-4.68 0-4.54 3.68-8.22 8.22-8.22 4.54 0 8.22 3.68 8.22 8.22 0 4.54-3.69 8.22-8.22 8.22zm4.49-5.43c-.25-.12-1.47-.72-1.7-.82s-.39-.12-.56.12c-.17.25-.64.82-.79.98s-.29.17-.54.05c-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75s-.12-.39.05-.51c.15-.15.34-.39.51-.58s.22-.25.34-.41c.12-.17.06-.32-.01-.43s-.56-1.34-.76-1.84c-.21-.5-.42-.43-.56-.44-.14-.01-.29-.01-.45-.01s-.39.06-.6.32c-.2.25-.78.76-.78 1.87s.8 2.17.92 2.32c.12.17 1.57 2.4 3.79 3.34.54.23.97.36 1.31.46.46.12.87.1.1.2-.21-.06-.68-.28-.79-.53s-.11-.48-.09-.53c.02-.05.11-.08.23-.2z"/></svg>
+    </a>
+
+    <script>
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+            else { header.classList.remove('scrolled'); }
+        });
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const navMenu = document.getElementById('nav-menu');
+        hamburgerButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
